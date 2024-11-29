@@ -1,6 +1,6 @@
 SELECT country.country_name,
        COUNT(invoice.invoice_number),
-       CAST(ROUND(AVG(invoice.total_price), 6) AS DECIMAL(10,6))
+       ROUND(AVG(invoice.total_price), 6) AS avg_amount
   FROM country
  INNER JOIN city
          ON city.country_id = country.id
